@@ -251,7 +251,7 @@ public:
             return false;
 
         while (left <= right) {
-            mid = (left + right) / 2;
+            mid = left + (right - left) / 2;
             if (x == this->array[mid])
                 return true;
             else if (x > this->array[mid])
