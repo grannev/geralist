@@ -291,6 +291,11 @@ public:
 		expand(1);
 		array[len - 1] = elem;
 	}
+
+    void push_back(type elem)
+    {
+        this->append(elem);
+    }
 	
 	void appbeg(type elem)
     {
