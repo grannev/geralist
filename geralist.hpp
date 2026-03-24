@@ -142,8 +142,10 @@ public:
 		return false;
 	}
 
-	type &operator[](size_t index)
+	type &operator[](long long index)
     {
+        if (index < 0)
+            index = len + index;
 		return array[index];
 	}
 
@@ -306,12 +308,27 @@ public:
     {
 		return array[index];
 	}
+
+    type &back()
+    {
+        return array[size() - 1];
+    }
+
+    type &front()
+    {
+        return array[0];
+    }
 	
 	const long long size() const
     {
 		return len;
 	}
-	
+
+    bool empty() const
+    {
+        return len == 0;
+    }
+
 	static list merge(const list &left, const list &right)
     {
 		list<type> stdata;
